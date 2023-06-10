@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/beach_picture">
 
         <!-- Curved Rectangle -->
         <LinearLayout
@@ -11,18 +14,40 @@
             android:layout_height="wrap_content"
             android:background="@drawable/curved_rectangle"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:layout_alignParentBottom="true">
 
-            <!-- About TextView -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- About and Favorite Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="About"
-                android:textSize="20sp"
-                android:textColor="#000000" />
+                android:orientation="horizontal"
+                android:gravity="start">
+
+                <!-- About TextView -->
+                <TextView
+                    android:id="@+id/tv_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:layout_marginStart="8dp" />
+
+                <!-- Favourite Icon Button -->
+                <ImageView
+                    android:id="@+id/btn_favorite"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_favorite"
+                    android:layout_marginStart="8dp"
+                    app:tint="#FF0000" />
+
+            </LinearLayout>
 
             <!-- Description TextView -->
             <TextView
+                android:id="@+id/tv_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Description"
@@ -30,21 +55,74 @@
                 android:textColor="#000000"
                 android:layout_marginTop="16dp" />
 
-            <!-- Horizontal RecyclerView for Photos -->
-            <androidx.recyclerview.widget.RecyclerView
+            <!-- ImageViews for Photos -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:id="@+id/photo_recyclerview" />
+                android:layout_marginTop="16dp">
 
-            <!-- Reviews TextView -->
-            <TextView
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/photo1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:src="@tools:sample/avatars"
+                    android:scaleType="fitCenter" />
+
+                <ImageView
+                    android:id="@+id/photo2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:src="@tools:sample/avatars"
+                    android:scaleType="fitCenter"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <ImageView
+                    android:id="@+id/photo3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:src="@tools:sample/avatars"
+                    android:scaleType="fitCenter" />
+
+            </LinearLayout>
+
+            <!-- Reviews Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Reviews"
-                android:textSize="20sp"
-                android:textColor="#000000"
-                android:layout_marginTop="16dp" />
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <!-- Star Icon -->
+                <ImageView
+                    android:id="@+id/iv_star"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_baseline_star_24"/>
+
+                <!-- Rating TextView -->
+                <TextView
+                    android:id="@+id/tv_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.5"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:layout_marginStart="8dp" />
+
+                <!-- Reviews TextView -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reviews"
+                    android:textSize="20sp"
+                    android:textColor="#000000"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
 
             <!-- RecyclerView for Reviews -->
             <androidx.recyclerview.widget.RecyclerView
