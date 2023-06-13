@@ -53,7 +53,7 @@ class UserController {
         req.body;
       const updateUser = await userModel.findOneAndUpdate(
         { _id: id },
-        { name, age, username, password, gender, email, location, image },
+        { username, password, email, location, image },
         {
           new: true,
           upsert: true,

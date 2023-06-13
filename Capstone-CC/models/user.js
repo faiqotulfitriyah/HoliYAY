@@ -13,6 +13,9 @@ const UserSchema = new mongoose.Schema(
     email: {
       type: String,
     },
+    location: {
+      type: String,
+    },
     image: {
       type: String,
     },

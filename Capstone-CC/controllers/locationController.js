@@ -1,6 +1,8 @@
 "use strict";
 const locationModel = require("../models/location");
-const axios = require("../utils/axiosConfig");
+// const axios = require("../utils/axiosConfig");
+const axios = require("axios");
+const { parse, stringify, toJSON, fromJSON } = require("flatted");
 
 class LocationController {
   static async create(req, res, next) {
@@ -79,13 +81,25 @@ class LocationController {
 
   static async recommendation(req, res, next) {
     try {
-      const { keywords, city = "Jakarta" } = req.body;
-      const locationRecommendation = await axios.post("/machine-learning", {
+      const { keywords, city } = req.body;
+
+      const locationRecommendation = await axios({
+        method: "post",
+        url: "http://localhost:5000/machine-learning",
+        headers: {
+          "Content-Type": "application/json",
+        },
         data: { keywords, city },
+        // json: true,
       });
-      console.log(keywords, city, locationRecommendation);
-      res.status(200).json({ locationRecommendation });
+      // if (locationRecommendation) {
+      // console.log(locationRecommendation.data);
+      const response = toJSON(locationRecommendation.data);
+      console.log(response);
+      res.status(200).json(response);
+      // }
     } catch (error) {
+      console.log(error);
       res.status(500).json({ message: "Internal server error" });
     }
   }
