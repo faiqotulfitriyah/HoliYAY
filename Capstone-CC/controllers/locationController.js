@@ -1,12 +1,9 @@
 "use strict";
 const locationModel = require("../models/location");
-// const axios = require("../utils/axiosConfig");
-const axios = require("axios");
-const { parse, stringify, toJSON, fromJSON } = require("flatted");
+const axios = require("../utils/axiosConfig");
 
 class LocationController {
   static async create(req, res, next) {
-    console.log(req.body);
     const location = new locationModel(req.body); //membuat object user berdasarkan skema userModel dengan data yang ada pada req.body
 
     try {
@@ -74,7 +71,6 @@ class LocationController {
       );
       res.status(200).json({ location: updateLocation });
     } catch (error) {
-      console.log(error);
       res.status(500).json({ message: "Internal server error" });
     }
   }
@@ -90,16 +86,12 @@ class LocationController {
           "Content-Type": "application/json",
         },
         data: { keywords, city },
-        // json: true,
       });
-      // if (locationRecommendation) {
-      // console.log(locationRecommendation.data);
-      const response = toJSON(locationRecommendation.data);
-      console.log(response);
-      res.status(200).json(response);
-      // }
+      if (locationRecommendation) {
+        const response = locationRecommendation.data;
+        res.status(200).json(response);
+      }
     } catch (error) {
-      console.log(error);
       res.status(500).json({ message: "Internal server error" });
     }
   }
