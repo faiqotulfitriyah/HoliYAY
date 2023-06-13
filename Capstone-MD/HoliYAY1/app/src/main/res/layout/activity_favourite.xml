@@ -15,11 +15,11 @@
         android:id="@+id/first_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Here are your liked destinations!"
+        android:text="@string/here_are_your_liked_destinations"
         android:textSize="45sp"
         android:textStyle="bold"
         android:layout_alignParentStart="true"
-        android:gravity="left"
+        android:gravity="start"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_below="@+id/search_button"
@@ -29,9 +29,9 @@
         android:id="@+id/second_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Here are some of the destinations that are in your favourite list!"
+        android:text="@string/destination_instruction"
         android:textSize="18sp"
-        android:gravity="left"
+        android:gravity="start"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
@@ -63,7 +63,8 @@
             android:layout_weight="1"
             android:src="@drawable/ic_home"
             android:padding="16dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:contentDescription="@string/home" />
 
         <ImageView
             android:id="@+id/favorite_icon"
@@ -72,7 +73,8 @@
             android:layout_weight="1"
             android:src="@drawable/ic_favorite"
             android:padding="16dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:contentDescription="@string/favorite" />
 
         <ImageView
             android:id="@+id/profile_icon"
@@ -81,7 +83,8 @@
             android:layout_weight="1"
             android:src="@drawable/ic_profile"
             android:padding="16dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:contentDescription="@string/profile" />
     </LinearLayout>
 
 </RelativeLayout>
