@@ -20,13 +20,14 @@
                 android:id="@+id/app_logo"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:src="@drawable/app_logo" />
+                android:src="@drawable/app_logo"
+                android:contentDescription="@string/holiyay" />
 
             <TextView
                 android:id="@+id/login_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:text="@string/login"
                 android:textSize="24sp"
                 android:textColor="#000000"
                 android:layout_marginTop="32dp" />
@@ -35,7 +36,7 @@
                 android:id="@+id/email_label_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email"
+                android:text="@string/email"
                 android:textColor="#000000"
                 android:layout_marginTop="32dp" />
 
@@ -43,62 +44,64 @@
                 android:id="@+id/email_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:layout_marginTop="8dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp" />
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:textColorHint="#757575" />
 
             <TextView
                 android:id="@+id/password_label_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="@string/password"
                 android:textColor="#000000"
                 android:layout_marginTop="16dp" />
 
-            <EditText
+            <com.example.holiyay1.data.ui.CustomEditText
                 android:id="@+id/password_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
-                android:inputType="textPassword"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColorHint="#757575" />
+
+
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/button_background"
+                android:layout_marginTop="32dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp" />
 
+            <TextView
+                android:id="@+id/dont_have_account_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_have_an_account"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_marginTop="16dp" />
 
-        <Button
-            android:id="@+id/login_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/button_background"
-            android:layout_below="@+id/password_edittext"
-            android:layout_marginTop="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp" />
-
-        <TextView
-            android:id="@+id/dont_have_account_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Don't have an account?"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_below="@+id/login_button"
-            android:layout_marginTop="16dp"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:textColor="#0000FF"
-            android:background="@android:color/transparent"
-            android:layout_toEndOf="@+id/dont_have_account_textview"
-            android:layout_alignBaseline="@+id/dont_have_account_textview" />
+            <Button
+                android:id="@+id/signup_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_up"
+                android:textColor="#0000FF"
+                android:background="@android:color/transparent" />
         </LinearLayout>
 
     </RelativeLayout>
