@@ -9,7 +9,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/beach_picture"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/beautiful_view" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,15 +26,16 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="10dp"
-                android:text="Welcome!"
+                android:text="@string/welcome"
                 android:textColor="#000000"
                 android:textSize="24sp" />
 
             <Button
+                android:id="@+id/signup_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_curved_black"
-                android:text="Get Started"
+                android:text="@string/get_started"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
@@ -42,15 +44,16 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                android:text="Have an account?"
+                android:text="@string/have_an_account"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
             <Button
+                android:id="@+id/login_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_curved_black"
-                android:text="Login"
+                android:text="@string/login"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
 
@@ -62,7 +65,8 @@
                 android:src="@drawable/app_logo"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-                android:maxHeight="100dp" />
+                android:maxHeight="100dp"
+                android:contentDescription="@string/holiyay" />
 
         </LinearLayout>
 
