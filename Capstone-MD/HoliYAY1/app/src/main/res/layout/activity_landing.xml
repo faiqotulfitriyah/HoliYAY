@@ -9,55 +9,64 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/beach_picture"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/beautiful_view" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/curved_rectangle"
-            android:padding="16dp"
             android:layout_alignParentBottom="true"
-            android:orientation="vertical">
+            android:background="@drawable/curved_rectangle"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome!"
-                android:textSize="24sp"
-                android:textColor="#FFFFFF"
-                android:layout_gravity="center_horizontal" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Get Started"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:background="@drawable/button_background" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Have an account?"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/welcome"
+                android:textColor="#000000"
+                android:textSize="24sp" />
 
             <Button
+                android:id="@+id/signup_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
+                android:background="@drawable/bg_curved_black"
+                android:text="@string/get_started"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:background="@drawable/button_background" />
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/have_an_account"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_curved_black"
+                android:text="@string/login"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/app_logo"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp"
+                android:src="@drawable/app_logo"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:maxHeight="100dp"
+                android:contentDescription="@string/holiyay" />
 
         </LinearLayout>
 
