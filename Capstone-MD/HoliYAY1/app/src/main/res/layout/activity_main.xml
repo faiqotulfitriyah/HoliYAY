@@ -8,17 +8,22 @@
         android:id="@+id/profile_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        tools:src="@tools:sample/avatars"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_margin="21dp" />
+        android:layout_margin="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/profile"
+        tools:src="@tools:sample/avatars" />
 
     <!-- Hello, good day! TextView -->
     <TextView
         android:id="@+id/greeting_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, good day!"
+        android:text="@string/greeting_message"
         android:textSize="20sp"
         android:layout_toEndOf="@id/profile_image"
         android:layout_alignTop="@id/profile_image"
@@ -29,7 +34,7 @@
         android:id="@+id/travel_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let's travel now!"
+        android:text="@string/let_s_travel_now"
         android:textSize="16sp"
         android:layout_below="@id/greeting_text"
         android:layout_toEndOf="@id/profile_image"
@@ -40,19 +45,21 @@
         android:id="@+id/search_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search"
+        android:hint="@string/search"
         android:layout_below="@id/profile_image"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:padding="8dp" />
+        android:padding="8dp"
+        android:autofillHints=""
+        android:inputType="text" />
 
     <!-- Search Button -->
     <Button
         android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search"
+        android:text="@string/search"
         android:background="@drawable/button_background"
         android:layout_below="@id/search_edittext"
         android:layout_centerHorizontal="true"
@@ -63,7 +70,7 @@
         android:id="@+id/travel_plannings_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Travel Plannings"
+        android:text="@string/travel_plannings"
         android:textSize="18sp"
         android:layout_below="@id/search_button"
         android:layout_marginStart="20dp"
@@ -84,7 +91,7 @@
         android:id="@+id/popular_places_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Popular Places"
+        android:text="@string/popular_places"
         android:textSize="18sp"
         android:layout_below="@id/travel_plannings_recyclerview"
         android:layout_marginStart="20dp"
@@ -119,7 +126,8 @@
             android:layout_weight="1"
             android:src="@drawable/ic_home"
             android:padding="16dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:contentDescription="@string/home" />
 
         <ImageView
             android:id="@+id/favorite_icon"
@@ -128,7 +136,8 @@
             android:layout_weight="1"
             android:src="@drawable/ic_favorite"
             android:padding="16dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:contentDescription="@string/favorite" />
 
         <ImageView
             android:id="@+id/profile_icon"
@@ -137,8 +146,8 @@
             android:layout_weight="1"
             android:src="@drawable/ic_profile"
             android:padding="16dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:contentDescription="@string/profile" />
     </LinearLayout>
 
 </RelativeLayout>
-
