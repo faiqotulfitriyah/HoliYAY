@@ -4,7 +4,7 @@ const axios = require("../utils/axiosConfig");
 
 class LocationController {
   static async create(req, res, next) {
-    const location = new locationModel(req.body); //membuat object user berdasarkan skema userModel dengan data yang ada pada req.body
+    const location = new locationModel(req.body); //membuat object location berdasarkan skema locationModel dengan data yang ada pada req.body
 
     try {
       await location.save(); //untuk save data ke dalam database
