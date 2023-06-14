@@ -81,7 +81,7 @@ class LocationController {
 
       const locationRecommendation = await axios({
         method: "post",
-        url: "http://localhost:5000/machine-learning",
+        url: "https://machinelearning-2esnppdf4a-et.a.run.app/machine-learning",
         headers: {
           "Content-Type": "application/json",
         },
