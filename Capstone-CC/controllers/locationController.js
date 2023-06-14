@@ -88,8 +88,8 @@ class LocationController {
         data: { keywords, city },
       });
       if (locationRecommendation) {
-        const response = locationRecommendation.data;
-        res.status(200).json(response);
+        // const response = locationRecommendation.data;
+        res.status(200).json(locationRecommendation.data);
       }
     } catch (error) {
       res.status(500).json({ message: "Internal server error" });
