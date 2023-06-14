@@ -6,8 +6,9 @@ const upload = require("../utils/cloudStorage");
 
 router.post("/register", UsersController.register);
 router.post("/login", UsersController.login);
-router.get("/:id", UsersController.findUsersbyID);
-router.put("/:id", upload.single("image"), UsersController.editUser);
+router.get("/", UsersController.findAll);
+router.get("/:id", UsersController.findOne);
+router.put("/:id", upload.single("image"), UsersController.edit);
 // router.post("/loginGoogle", UsersController.loginGoogle);
 
 module.exports = router;

@@ -8,7 +8,6 @@ class LocationController {
 
     try {
       await location.save(); //untuk save data ke dalam database
-
       res.status(201).json({ location });
     } catch (error) {
       res.status(500).json({ message: "Internal server error" });
@@ -17,8 +16,19 @@ class LocationController {
 
   static async findAll(req, res, next) {
     try {
-      const locations = await locationModel.find();
-      res.status(200).json({ locations });
+      const { limit = 10, offset = 0 } = req.query;
+      const locations = await locationModel
+        .find()
+        .limit(limit)
+        .skip(offset)
+        .exec();
+      const count = await locationModel.count();
+      const pagination = {
+        page: offset ? offset / limit + 1 : 1,
+        per_page: limit * 1,
+        total_data: count,
+      };
+      res.status(200).json({ locations, pagination });
     } catch (error) {
       res.status(500).json({ message: "Internal server error" });
     }
@@ -66,11 +76,11 @@ class LocationController {
         {
           new: true,
           upsert: true,
-          rawResult: true,
         }
       );
       res.status(200).json({ location: updateLocation });
     } catch (error) {
+      console.log(error);
       res.status(500).json({ message: "Internal server error" });
     }
   }
@@ -86,10 +96,10 @@ class LocationController {
           "Content-Type": "application/json",
         },
         data: { keywords, city },
+        json: true,
       });
       if (locationRecommendation) {
-        // const response = locationRecommendation.data;
-        res.status(200).json(locationRecommendation.data);
+        res.status(200).json({ recommendation: locationRecommendation.data });
       }
     } catch (error) {
       res.status(500).json({ message: "Internal server error" });

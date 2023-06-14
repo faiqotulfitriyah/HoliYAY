@@ -3,12 +3,9 @@ const userModel = require("../models/user");
 
 class UserController {
   static async register(req, res, next) {
-    console.log(req.body);
     const user = new userModel(req.body); //membuat object user berdasarkan skema userModel dengan data yang ada pada req.body
-
     try {
       await user.save(); //untuk save data ke dalam database
-
       res.status(201).json({ user });
     } catch (error) {
       res.status(500).json({ message: "Internal server error" });
@@ -36,7 +33,16 @@ class UserController {
     }
   }
 
-  static async findUsersbyID(req, res, next) {
+  static async findAll(req, res, next) {
+    try {
+      const findUsers = await userModel.find();
+      res.status(200).json({ users: findUsers });
+    } catch (error) {
+      res.status(500).json({ message: "Internal server error" });
+    }
+  }
+
+  static async findOne(req, res, next) {
     try {
       const { id } = req.params;
       const findUser = await userModel.findOne({ _id: id }).exec();
@@ -46,18 +52,16 @@ class UserController {
     }
   }
 
-  static async editUser(req, res, next) {
+  static async edit(req, res, next) {
     try {
       const { id } = req.params;
-      const { name, age, username, password, gender, email, location, image } =
-        req.body;
+      const { username, password, email, location, image } = req.body;
       const updateUser = await userModel.findOneAndUpdate(
         { _id: id },
         { username, password, email, location, image },
         {
           new: true,
           upsert: true,
-          rawResult: true,
         }
       );
       res.status(200).json({ user: updateUser });

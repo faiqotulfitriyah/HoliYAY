@@ -12,12 +12,15 @@ const UserSchema = new mongoose.Schema(
     },
     email: {
       type: String,
+      required: true,
     },
     location: {
       type: String,
+      default: "",
     },
     image: {
       type: String,
+      default: "",
     },
   },
   { timestamps: true }

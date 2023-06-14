@@ -4,7 +4,7 @@ const LocationSchema = new mongoose.Schema(
   {
     Place_Id: {
       type: Number,
-      required: true,
+      default: 0,
     },
     Place_Name: {
       type: String,
@@ -40,6 +40,7 @@ const LocationSchema = new mongoose.Schema(
     },
     Image: {
       type: String,
+      default: "",
     },
   },
   { timestamps: true }
