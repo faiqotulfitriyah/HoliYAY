@@ -37,4 +37,8 @@
     <string name="enter_keywords">Mau kemana hari ini?</string>
     <string name="enter_city">Masukkan kota tujuan</string>
     <string name="city_description">Pastikan awalan huruf dari kota menggunakan huruf kapital, ya! (Contoh: Jakarta, Surabaya, Malang, dsb.)</string>
+<<<<<<< HEAD
 </resources>
+=======
+</resources>
+>>>>>>> 406bc2843e1c9b5899f6b7e83e117792bf548775
