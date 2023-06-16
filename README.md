@@ -1,6 +1,6 @@
 # <h1>HoliYAY</h1>
 <p align="center">
-  <img src="https://github.com/faiqotulfitriyah/HoliYAY/blob/main/holiyayLogo.png" width="280" height="100">
+  <img src="https://github.com/faiqotulfitriyah/HoliYAY/blob/main/holiyayLogo.jpeg">
 </p>
 This project aims to address the decline in the tourism industry in Java Island, Indonesia, resulting from the COVID-19 pandemic. Our goal is to develop a vibe-based travel recommendation app that highlights hidden-gem destinations within Java Island, ultimately supporting the recovery of the tourism sector.
 
