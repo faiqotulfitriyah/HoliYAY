@@ -10,7 +10,7 @@ class LocationController {
       await location.save(); //untuk save data ke dalam database
       res.status(201).json({ location });
     } catch (error) {
-      res.status(500).json({ message: "Internal server error" });
+      next(error);
     }
   }
 
@@ -30,7 +30,7 @@ class LocationController {
       };
       res.status(200).json({ locations, pagination });
     } catch (error) {
-      res.status(500).json({ message: "Internal server error" });
+      next(error);
     }
   }
 
@@ -40,7 +40,7 @@ class LocationController {
       const findLocation = await locationModel.findOne({ _id: id }).exec();
       res.status(200).json({ location: findLocation });
     } catch (error) {
-      res.status(500).json({ message: "Internal server error" });
+      next(error);
     }
   }
 
@@ -80,8 +80,7 @@ class LocationController {
       );
       res.status(200).json({ location: updateLocation });
     } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: "Internal server error" });
+      next(error);
     }
   }
 
@@ -102,7 +101,7 @@ class LocationController {
         res.status(200).json({ recommendation: locationRecommendation.data });
       }
     } catch (error) {
-      res.status(500).json({ message: "Internal server error" });
+      next(error);
     }
   }
 }
