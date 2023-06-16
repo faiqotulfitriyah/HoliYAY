@@ -39,3 +39,5 @@ https://www.section.io/engineering-education/nodejs-mongoosejs-mongodb/
 - Project Brief :
 - Video of Group Presentation :
 - Presentation/slides : 
+Final Presentation : https://www.canva.com/design/DAFlm21QQfU/07k2FB9v6Sq25X3KJIxYag/edit?utm_content=DAFlm21QQfU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+Go-to-Market : https://docs.google.com/presentation/d/1YRkJd80uM2LhKbyZI86isJKjPq553aFHAReZxmCEsrg/edit?usp=sharing 
