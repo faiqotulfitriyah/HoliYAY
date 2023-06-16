@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".data.ui.activity.EditProfileActivity">
+    tools:context=".ui.activity.EditProfileActivity">
 
     <ImageButton
         android:id="@+id/back_button"
@@ -49,7 +49,7 @@
         android:id="@+id/email_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/email"
+        android:text="@string/username"
         android:textSize="14sp"
         android:layout_below="@id/name_textview"
         android:layout_centerHorizontal="true"
@@ -103,42 +103,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="@string/name"
                 android:textSize="16sp"
+                android:text="@string/username"
+                android:hint="@string/username"
                 android:autofillHints=""
                 android:inputType="textPersonName" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_email"
-                android:contentDescription="@string/email" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/email"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/user_email_edittext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="@string/email"
-                android:textSize="16sp"
-                android:autofillHints=""
-                android:inputType="textEmailAddress" />
 
         </LinearLayout>
 
@@ -167,8 +136,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="@string/location"
                 android:textSize="16sp"
+                android:text="@string/location"
                 android:autofillHints=""
                 android:inputType="text" />
         </LinearLayout>

@@ -1,32 +1,60 @@
-package com.example.holiyay1.data.ui.activity
+package com.example.holiyay1.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import android.widget.Button
-import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.holiyay1.R
+import com.example.holiyay1.data.api.Location
+import com.example.holiyay1.databinding.ActivityResultsBinding
+import com.example.holiyay1.ui.LocationAdapter
 
 class ResultsActivity : AppCompatActivity() {
-    private lateinit var backButton: Button
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var firstTextView: TextView
-    private lateinit var secondTextView: TextView
+    private lateinit var binding: ActivityResultsBinding
+    private lateinit var locationAdapter: LocationAdapter
+    private var locations: List<Location> = emptyList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_results)
+        binding = ActivityResultsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        backButton = findViewById(R.id.back_button)
-        recyclerView = findViewById(R.id.recyclerview)
-        firstTextView = findViewById(R.id.first_textview)
-        secondTextView = findViewById(R.id.second_textview)
-
-        // Set click listener for the back button
-        backButton.setOnClickListener {
-            finish() // Finish the current activity and go back to the previous activity
+        binding.backButton.setOnClickListener {
+            finish()
         }
 
-        // TODO: Implement logic for populating RecyclerView with data
+        val userQuery = intent.getStringExtra("query") ?: ""
+        val userCity = intent.getStringExtra("city") ?: ""
+        @Suppress("DEPRECATION")
+        locations = intent.getParcelableArrayListExtra("locations") ?: emptyList()
+
+        val filteredLocations = filterLocations(userQuery, userCity)
+
+        val firstTextView = binding.firstTextview
+        firstTextView.text = getString(R.string.quote)
+
+        val secondTextView = binding.secondTextview
+        secondTextView.text = getString(R.string.recommendation)
+
+        val recyclerView = binding.recyclerview
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        locationAdapter = LocationAdapter()
+        recyclerView.adapter = locationAdapter
+
+        showSearchResults(filteredLocations)
+    }
+
+    private fun filterLocations(query: String, city: String): List<Location> {
+        val filteredLocations = mutableListOf<Location>()
+
+        for (location in locations) {
+            if (location.placeName.contains(query, ignoreCase = true) && location.city.contains(city, ignoreCase = true)) {
+                filteredLocations.add(location)
+            }
+        }
+        return filteredLocations
+    }
+
+    private fun showSearchResults(locations: List<Location>) {
+        locationAdapter.setList(locations)
     }
 }

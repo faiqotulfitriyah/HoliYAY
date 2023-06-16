@@ -1,4 +1,4 @@
-package com.example.holiyay1.data.ui.activity
+package com.example.holiyay1.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -13,13 +13,13 @@ class LandingActivity : AppCompatActivity() {
         binding = ActivityLandingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.loginButton.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+        binding.signupButton.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 
-        binding.signupButton.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
+        binding.loginButton.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
     }

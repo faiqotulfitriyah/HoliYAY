@@ -40,62 +40,67 @@
         android:layout_toEndOf="@id/profile_image"
         android:layout_marginStart="8dp" />
 
-    <!-- Search EditText -->
+    <!-- Search EditText for Keywords -->
     <EditText
-        android:id="@+id/search_edittext"
+        android:id="@+id/keywords_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/search"
-        android:layout_below="@id/profile_image"
+        android:hint="@string/enter_keywords"
+        android:layout_below="@id/travel_text"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="64dp"
         android:padding="8dp"
         android:autofillHints=""
         android:inputType="text" />
 
+    <!-- Search EditText for City -->
+    <EditText
+        android:id="@+id/city_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_city"
+        android:layout_below="@id/keywords_edittext"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:autofillHints=""
+        android:inputType="textCapWords" />
+
+    <!-- City Description -->
+    <TextView
+        android:id="@+id/city_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/city_description"
+        android:textSize="12sp"
+        android:layout_below="@id/city_edittext"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp" />
+
     <!-- Search Button -->
     <Button
         android:id="@+id/search_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:text="@string/search"
+        android:textSize="12sp"
         android:background="@drawable/button_background"
-        android:layout_below="@id/search_edittext"
+        android:backgroundTint="@color/skyblue"
+        android:layout_below="@id/city_description"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="20dp" />
 
-    <!-- Travel Plannings TextView -->
-    <TextView
-        android:id="@+id/travel_plannings_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/travel_plannings"
-        android:textSize="18sp"
-        android:layout_below="@id/search_button"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp" />
-
-    <!-- RecyclerView for Travel Plannings -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/travel_plannings_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/travel_plannings_text"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp" />
-
-    <!-- Popular Places TextView -->
     <TextView
         android:id="@+id/popular_places_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/popular_places"
         android:textSize="18sp"
-        android:layout_below="@id/travel_plannings_recyclerview"
+        android:layout_below="@id/search_button"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="50dp" />
 
     <!-- RecyclerView for Popular Places -->
     <androidx.recyclerview.widget.RecyclerView
@@ -104,8 +109,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/popular_places_text"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        tools:listitem="@layout/places_row"/>
 
     <!-- Navigation Bar -->
     <LinearLayout

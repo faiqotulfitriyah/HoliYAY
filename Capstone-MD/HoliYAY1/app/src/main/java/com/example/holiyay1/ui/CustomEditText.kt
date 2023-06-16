@@ -1,4 +1,4 @@
-package com.example.holiyay1.data.ui
+package com.example.holiyay1.ui
 
 import android.content.Context
 import android.graphics.drawable.Drawable

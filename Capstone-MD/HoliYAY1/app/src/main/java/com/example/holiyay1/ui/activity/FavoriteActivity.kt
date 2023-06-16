@@ -1,4 +1,4 @@
-package com.example.holiyay1.data.ui.activity
+package com.example.holiyay1.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -21,18 +21,15 @@ class FavoriteActivity : AppCompatActivity() {
         profileIcon = findViewById(R.id.profile_icon)
 
         homeIcon.setOnClickListener {
-            // Navigate to MainActivity
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
         favoriteIcon.setOnClickListener {
-            // Show warning/notification that user is already in FavoriteActivity
             Toast.makeText(this, "You are already in Favorites", Toast.LENGTH_SHORT).show()
         }
 
         profileIcon.setOnClickListener {
-            // Navigate to ProfileActivity
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }

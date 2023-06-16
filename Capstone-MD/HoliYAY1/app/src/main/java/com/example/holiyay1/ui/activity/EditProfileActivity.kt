@@ -1,4 +1,4 @@
-package com.example.holiyay1.data.ui.activity
+package com.example.holiyay1.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

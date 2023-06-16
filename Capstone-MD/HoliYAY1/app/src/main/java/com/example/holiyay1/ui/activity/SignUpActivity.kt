@@ -1,67 +1,77 @@
-package com.example.holiyay1.data.ui.activity
+package com.example.holiyay1.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.content.Intent
-import android.widget.EditText
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
-import com.example.holiyay1.R
-import com.example.holiyay1.data.ui.CustomEditText
+import androidx.lifecycle.ViewModelProvider
+import com.example.holiyay1.data.api.Outcome
+import com.example.holiyay1.databinding.ActivitySignUpBinding
+import com.example.holiyay1.ui.viewmodel.SignUpViewModel
 
 class SignUpActivity : AppCompatActivity() {
-    private lateinit var nameEditText: EditText
-    private lateinit var emailEditText: EditText
-    private lateinit var passwordEditText: CustomEditText
-    private lateinit var signupButton: Button
-    private lateinit var loginButton: Button
+    private lateinit var binding: ActivitySignUpBinding
+//    private lateinit var signUpViewModel: SignUpViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        nameEditText = findViewById(R.id.name_edittext)
-        emailEditText = findViewById(R.id.email_edittext)
-        passwordEditText = findViewById(R.id.password_edittext)
-        signupButton = findViewById(R.id.signup_button)
-        loginButton = findViewById(R.id.login_button)
+//        signUpViewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
 
-        signupButton.isEnabled = false // Disable login button initially
+        binding.signupButton.isEnabled = false
 
-        emailEditText.addTextChangedListener { validateInputs() }
-        passwordEditText.addTextChangedListener { validateInputs() }
+        binding.usernameEdittext.addTextChangedListener { validateInputs() }
+        binding.passwordEdittext.addTextChangedListener { validateInputs() }
 
-        signupButton.setOnClickListener {
-            val name = nameEditText.text.toString()
-            val email = emailEditText.text.toString()
-            val password = passwordEditText.text.toString()
+        binding.signupButton.setOnClickListener {
+            binding.usernameEdittext.text.toString()
+            binding.passwordEdittext.text.toString()
 
-            // Skip API call and directly navigate to MainActivity
+//            signUpUser(username, password)
             navigateToMainActivity()
         }
 
-        loginButton.setOnClickListener {
-            val intent = Intent(this, SignUpActivity::class.java)
+        binding.loginButton.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
     }
 
     private fun validateInputs() {
-        val name = nameEditText.text.toString()
-        val email = emailEditText.text.toString()
-        val password = passwordEditText.text.toString()
+        val username = binding.usernameEdittext.text.toString()
+        val password = binding.passwordEdittext.text.toString()
 
-        val isNameValid = name.isNotBlank()
-        val isEmailValid = email.isNotBlank()
+        val isUsernameValid = username.isNotBlank()
         val isPasswordValid = password.isNotBlank()
 
-        signupButton.isEnabled = isNameValid && isEmailValid && isPasswordValid
+        binding.signupButton.isEnabled = isUsernameValid && isPasswordValid
     }
+
+//    private fun signUpUser(username: String, password: String) {
+//        signUpViewModel.signUp(username, password).observe(this) {
+//            if (it != null) {
+//                when (it) {
+//                    is Outcome.Loading -> {
+//
+//                    }
+//                    is Outcome.Success -> {
+//                        navigateToMainActivity()
+//                    }
+//                    is Outcome.Error -> {
+//                        Toast.makeText(this, it.error, Toast.LENGTH_LONG).show()
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     private fun navigateToMainActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-        finish() // Optional: Close LoginActivity to prevent going back to it via back button
+        finish()
     }
 }

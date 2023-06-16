@@ -2,7 +2,7 @@
     <string name="app_name">HoliYAY1</string>
     <string name="greeting_message">Hello, %1$s</string>
     <string name="login">Login</string>
-    <string name="email">Email</string>
+    <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="password_too_short">Password is too short</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
@@ -31,4 +31,10 @@
     <string name="search">Search</string>
     <string name="travel_plannings">Travel Plannings</string>
     <string name="save">Save</string>
+    <string name="city">City</string>
+    <string name="price">Price</string>
+    <string name="rating">Rating</string>
+    <string name="enter_keywords">Mau kemana hari ini?</string>
+    <string name="enter_city">Masukkan kota tujuan</string>
+    <string name="city_description">Pastikan awalan huruf dari kota menggunakan huruf kapital, ya! (Contoh: Jakarta, Surabaya, Malang, dsb.)</string>
 </resources>
