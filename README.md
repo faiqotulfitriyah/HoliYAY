@@ -23,6 +23,18 @@ Team ID: C23-PS182
 | Cloud Computing | ![image](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![image](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white) ![image](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) |
 | Mobile Development | ![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white) ![image](https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white) ![image](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white) |
 
+## API Documentation
+Postman collection:
+https://api.postman.com/collections/27992524-763ca37d-c41f-4e04-860c-3ca98d76e47a?access_key=PMAT-01H32G74YEVGKDRP6JC4DKCK9Y
+
+Base URL:
+https://backend-dot-capstone-386902.et.r.appspot.com
+
+## Third party service
+MongoDB for NoSql Database.
+We choose MongoDB because it is easier to use and can save our credits more, here is the link to setup your MongoDB 
+https://www.section.io/engineering-education/nodejs-mongoosejs-mongodb/
+
 ## Link
 - Project Brief :
 - Video of Group Presentation :
